@@ -10,6 +10,9 @@ void addCircle(int x, int y) {
   b.y = y;
   b.dx =  (int)( Math.random()*5-2.5);
   b.dy = (int)(Math.random()*5-2.5);
+  b.r = (int)(Math.random()*255);
+  b.g = (int)(Math.random()*255);
+  b.b = (int)(Math.random()*255);
   al.add(b);
 }
 void update() {
@@ -43,6 +46,8 @@ void draw()
     addCircle(mouseX, mouseY);
   }
   for (Ball b : al) {
+    fill(b.r, b.g, b.b);
+    stroke(b.r,b.g,b.b);
     ellipse(b.x, b.y, BALL_SIZE, BALL_SIZE);
   }
   update();
@@ -53,4 +58,7 @@ public class Ball {
   int y;
   int dx;
   int dy;
+  int r;
+  int g;
+  int b;
 }
